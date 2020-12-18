@@ -1,0 +1,23 @@
+void main(){
+   List <int> x =  [1,2,3,4,5];
+   int xx = 3 ;
+   int min = 0 ;
+   int max =  x.length;
+   print(Binarysearch(xx,x,min,max));
+   
+}
+
+dynamic Binarysearch(int xx,List <int> x,int min,int max){
+    if (max >= min) {
+    int mid = ((max + min) / 2).floor();
+    if (xx == x[mid]) {
+      print('your item is at index: ${mid}');
+    } else if (xx > x[mid]) {
+      Binarysearch(xx, x, mid + 1, max);
+    } else {
+      Binarysearch(xx, x, min, mid - 1);
+    }
+  }
+  return null;
+}
+  
